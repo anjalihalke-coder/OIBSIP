@@ -1,0 +1,385 @@
+/* ---------------------------------------------
+   Tokens
+--------------------------------------------- */
+:root{
+  --bg:            #0a0f1c;
+  --bg-glow:       #0e1830;
+  --panel:         #121a2c;
+  --panel-2:       #1a2439;
+  --border:        rgba(255,255,255,.08);
+  --border-strong: rgba(255,255,255,.16);
+
+  --text:          #eaeff7;
+  --text-dim:      #8d96ac;
+
+  --cold:          #5eb3e4;
+  --mid:           #f2c14e;
+  --hot:           #f0654a;
+  --error:         #ff6b6b;
+
+  --font-display:  'Space Grotesk', sans-serif;
+  --font-body:     'Inter', sans-serif;
+  --font-mono:     'JetBrains Mono', monospace;
+
+  --radius-lg: 20px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+}
+
+/* ---------------------------------------------
+   Reset & base
+--------------------------------------------- */
+*, *::before, *::after{ box-sizing: border-box; }
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 20% -10%, var(--bg-glow) 0%, transparent 45%),
+    radial-gradient(circle at 100% 110%, #1a1030 0%, transparent 40%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 3rem 1.25rem;
+}
+
+.stage{
+  width:100%;
+  max-width: 720px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 2rem;
+}
+
+/* ---------------------------------------------
+   Header
+--------------------------------------------- */
+.page-head{
+  text-align:center;
+}
+.eyebrow{
+  margin:0 0 .5rem;
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--cold);
+}
+.page-head h1{
+  margin:0;
+  font-family: var(--font-display);
+  font-weight:700;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  letter-spacing: -.02em;
+}
+.subhead{
+  margin:.6rem 0 0;
+  color: var(--text-dim);
+  font-size: 1rem;
+}
+
+/* ---------------------------------------------
+   Console (card)
+--------------------------------------------- */
+.console{
+  width:100%;
+  background: linear-gradient(180deg, var(--panel) 0%, #101828 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  display:flex;
+  gap: 2.5rem;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,.6);
+}
+
+/* ---------------------------------------------
+   Thermometer gauge (signature element)
+--------------------------------------------- */
+.gauge{
+  flex: 0 0 auto;
+  display:grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 260px 34px;
+  column-gap: 10px;
+  align-items:start;
+}
+
+.gauge__scale{
+  grid-column:1;
+  grid-row:1;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:flex-end;
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  color: var(--text-dim);
+  padding: 2px 0;
+}
+
+.gauge__tube{
+  grid-column:2;
+  grid-row:1;
+  position:relative;
+  width:16px;
+  height:100%;
+  background: var(--panel-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px 8px 2px 2px;
+  overflow:hidden;
+  justify-self:center;
+}
+
+.gauge__fill{
+  position:absolute;
+  bottom:0; left:0;
+  width:100%;
+  height:0%;
+  background: var(--cold);
+  transition: height .6s cubic-bezier(.22,1,.36,1), background .6s ease;
+}
+
+.gauge__ticks{
+  position:absolute;
+  inset:0;
+  background-image: repeating-linear-gradient(
+    to top,
+    transparent 0,
+    transparent calc(10% - 1px),
+    var(--border-strong) 10%
+  );
+  pointer-events:none;
+}
+
+.gauge__bulb{
+  grid-column:2;
+  grid-row:2;
+  justify-self:center;
+  margin-top:-2px;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background: var(--panel-2);
+  border: 1px solid var(--border-strong);
+  position:relative;
+  overflow:hidden;
+}
+
+.gauge__bulb-fill{
+  position:absolute;
+  inset: 3px;
+  border-radius:50%;
+  background: var(--cold);
+  transition: background .6s ease;
+}
+
+/* ---------------------------------------------
+   Control panel
+--------------------------------------------- */
+.panel{
+  flex:1 1 auto;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap: 1.75rem;
+}
+
+.input-block{
+  display:flex;
+  flex-direction:column;
+  gap: 1.25rem;
+}
+
+.field label,
+.field legend{
+  display:block;
+  font-size: .8rem;
+  font-weight:600;
+  color: var(--text-dim);
+  margin-bottom: .55rem;
+  letter-spacing: .01em;
+}
+
+.field fieldset{ border:none; padding:0; margin:0; }
+
+#tempValue{
+  width:100%;
+  background: var(--panel-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  padding: .85rem 1rem;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+#tempValue::placeholder{ color: #56607a; }
+#tempValue:focus-visible{
+  outline: none;
+  border-color: var(--cold);
+  box-shadow: 0 0 0 3px rgba(94,179,228,.25);
+}
+#tempValue.has-error{
+  border-color: var(--error);
+}
+#tempValue.has-error:focus-visible{
+  box-shadow: 0 0 0 3px rgba(255,107,107,.25);
+}
+
+.error-msg{
+  min-height: 1.1rem;
+  margin: .5rem 0 0;
+  font-size: .82rem;
+  color: var(--error);
+}
+
+.radio-row{
+  display:flex;
+  gap:.6rem;
+}
+
+.radio-pill{
+  position:relative;
+  flex:1;
+  text-align:center;
+  cursor:pointer;
+}
+.radio-pill input{
+  position:absolute;
+  opacity:0;
+  inset:0;
+  cursor:pointer;
+  margin:0;
+}
+.radio-pill span{
+  display:block;
+  padding: .7rem 0;
+  border-radius: var(--radius-sm);
+  background: var(--panel-2);
+  border: 1px solid var(--border-strong);
+  font-family: var(--font-mono);
+  font-weight:500;
+  color: var(--text-dim);
+  transition: all .18s ease;
+}
+.radio-pill input:checked + span{
+  background: rgba(94,179,228,.14);
+  border-color: var(--cold);
+  color: var(--text);
+}
+.radio-pill input:focus-visible + span{
+  outline: 2px solid var(--cold);
+  outline-offset: 2px;
+}
+
+.convert-btn{
+  appearance:none;
+  border:none;
+  border-radius: var(--radius-md);
+  padding: .9rem 1.5rem;
+  background: linear-gradient(135deg, var(--cold), #4a8fc2);
+  color: #071019;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: .01em;
+  cursor:pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.convert-btn:hover{
+  box-shadow: 0 10px 24px -8px rgba(94,179,228,.55);
+}
+.convert-btn:active{
+  transform: translateY(1px);
+}
+.convert-btn:focus-visible{
+  outline: 2px solid var(--cold);
+  outline-offset: 3px;
+}
+
+/* ---------------------------------------------
+   Results
+--------------------------------------------- */
+.results{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .75rem;
+}
+
+.result-card{
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem .75rem;
+  text-align:center;
+  transition: border-color .3s ease, background .3s ease;
+}
+.result-card.active{
+  border-color: var(--cold);
+  background: rgba(94,179,228,.08);
+}
+
+.result-label{
+  margin:0 0 .4rem;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text-dim);
+}
+
+.result-value{
+  margin:0;
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  font-weight:700;
+  color: var(--text);
+}
+.result-unit{
+  font-size: .85rem;
+  font-weight:500;
+  color: var(--text-dim);
+  margin-left: .2rem;
+}
+
+/* ---------------------------------------------
+   Footnote
+--------------------------------------------- */
+.footnote{
+  margin:0;
+  text-align:center;
+  font-size: .78rem;
+  color: var(--text-dim);
+  max-width: 480px;
+}
+
+/* ---------------------------------------------
+   Responsive
+--------------------------------------------- */
+@media (max-width: 620px){
+  .console{
+    flex-direction:column;
+    align-items:center;
+    padding: 1.75rem 1.5rem;
+  }
+  .gauge{
+    grid-template-rows: 160px 30px;
+  }
+  .gauge__tube, .gauge__scale{ height:160px; }
+  .results{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------
+   Reduced motion
+--------------------------------------------- */
+@media (prefers-reduced-motion: reduce){
+  .gauge__fill, .gauge__bulb-fill, .convert-btn, .radio-pill span{
+    transition:none;
+  }
+}
