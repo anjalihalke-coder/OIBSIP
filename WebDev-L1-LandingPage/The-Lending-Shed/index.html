@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Lending Shed — Borrow tools, not clutter</title>
+<link rel="stylesheet" href="style.css">
+
+<link rel="icon" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+<circle cx='50' cy='50' r='40' fill='%23C1542C'/>
+</svg>">
+
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand"><span class="peg"></span>The Lending Shed</a>
+    <nav class="links">
+      <a href="#how" data-i18n="nav_how">How it works</a>
+      <a href="#catalog" data-i18n="nav_catalog">Catalog</a>
+      <a href="#stories" data-i18n="nav_stories">Stories</a>
+      <a href="#customer-feedback" data-i18n="nav_feedback">Feedback</a>
+    </nav>
+    <div class="nav-controls">
+      <select id="langSwitch" aria-label="Choose language">
+        <option value="en">EN</option>
+        <option value="hi">हिं</option>
+        <option value="mr">मरा</option>
+      </select>
+      <button id="themeToggle" type="button" aria-label="Toggle dark mode">🌙</button>
+      <a href="#find-shed" class="btn-primary" data-i18n="nav_cta">Find your nearest shed</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow" data-i18n="hero_eyebrow">A neighbourhood tool library</span>
+      <h1 data-i18n-html="hero_title">Why <em>own</em> a drill<br>you'll use twice a year?</h1>
+      <p class="sub" data-i18n="hero_sub">The Lending Shed is a member-run library of tools, tested and shelved by neighbours, so the whole street doesn't need six identical ladders sitting in six identical garages.</p>
+      <div class="cta-row">
+        <a href="#find-shed" class="btn-primary" data-i18n="hero_cta_primary">Find your nearest shed</a>
+        <a href="#how" class="btn-ghost" data-i18n="hero_cta_ghost">See how borrowing works</a>
+      </div>
+    </div>
+    <div class="pegboard" aria-hidden="true">
+      <div class="peg-hole"><svg viewBox="0 0 24 24"><path d="M2 12h6M8 9v6M8 9h7a3 3 0 0 1 0 6H8"/></svg></div>
+      <div class="peg-hole"><svg viewBox="0 0 24 24"><path d="M14 4 4 14l3 3 10-10-3-3z"/><path d="M11 7l3 3"/></svg></div>
+      <div class="peg-hole"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+      <div class="peg-hole tag">
+        <span class="num">410</span>
+        <span class="lbl" data-i18n="peg_lbl">tools shared</span>
+      </div>
+      <div class="peg-hole"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="1"/><path d="M9 6V4h6v2"/></svg></div>
+      <div class="peg-hole"><svg viewBox="0 0 24 24"><path d="M3 21l6-6M14 4l6 6-9 9-6-6 9-9z"/></svg></div>
+      <div class="peg-hole"><svg viewBox="0 0 24 24"><path d="M19 3 5 17M5 17v4h4M19 3l-6 6"/></svg></div>
+      <div class="peg-hole"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 12l4-4M4 12l4 4M20 12l-4-4M20 12l-4 4"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="section-head">
+    <span class="eyebrow" data-i18n="how_eyebrow">How it works</span>
+    <h2 data-i18n="how_title">Borrowing beats buying, three ways</h2>
+    <p data-i18n="how_sub">No app, no deposit, no fuss. Just a logbook on a clipboard and a community that keeps each other honest.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <span class="tag" data-i18n="step1_tag">Step one</span>
+      <h3 data-i18n="step1_title">Sign the logbook</h3>
+      <p data-i18n="step1_desc">Stop by any shed, write down what you're taking and when you'll bring it back. That's the whole membership process.</p>
+    </div>
+    <div class="step">
+      <span class="tag" data-i18n="step2_tag">Step two</span>
+      <h3 data-i18n="step2_title">Use it for the weekend</h3>
+      <p data-i18n="step2_desc">Most loans run three days, long enough to finish the fence, fix the bike, or hang the shelves properly.</p>
+    </div>
+    <div class="step">
+      <span class="tag" data-i18n="step3_tag">Step three</span>
+      <h3 data-i18n="step3_title">Return it clean</h3>
+      <p data-i18n="step3_desc">Wipe it down, hang it back on its peg, and cross your name off. The next neighbour is already on the list.</p>
+    </div>
+  </div>
+</section>
+
+<section id="catalog" class="catalog-bg">
+  <div class="section-head">
+    <span class="eyebrow" data-i18n="catalog_eyebrow">What's on the wall</span>
+    <h2 data-i18n="catalog_title">A small library, well stocked</h2>
+    <p data-i18n="catalog_sub">Every shed carries the same core set, checked and serviced after each return.</p>
+  </div>
+  <div class="catalog-grid">
+    <div class="tool-card">
+      <svg viewBox="0 0 24 24"><path d="M2 12h6M8 9v6M8 9h7a3 3 0 0 1 0 6H8"/></svg>
+      <h4 data-i18n="tool_drills">Power drills</h4>
+      <span data-i18n="tool_drills_stock">12 in stock</span>
+    </div>
+    <div class="tool-card">
+      <svg viewBox="0 0 24 24"><path d="M19 3 5 17M5 17v4h4M19 3l-6 6"/></svg>
+      <h4 data-i18n="tool_saws">Hand saws</h4>
+      <span data-i18n="tool_saws_stock">8 in stock</span>
+    </div>
+    <div class="tool-card">
+      <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="1"/><path d="M9 6V4h6v2"/></svg>
+      <h4 data-i18n="tool_toolboxes">Toolboxes</h4>
+      <span data-i18n="tool_toolboxes_stock">15 in stock</span>
+    </div>
+    <div class="tool-card">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+      <h4 data-i18n="tool_pressurewashers">Pressure washers</h4>
+      <span data-i18n="tool_pressurewashers_stock">4 in stock</span>
+    </div>
+    <div class="tool-card">
+      <svg viewBox="0 0 24 24"><path d="M4 12h16M4 12l4-4M4 12l4 4M20 12l-4-4M20 12l-4 4"/></svg>
+      <h4 data-i18n="tool_ladders">Ladders</h4>
+      <span data-i18n="tool_ladders_stock">6 in stock</span>
+    </div>
+    <div class="tool-card">
+      <svg viewBox="0 0 24 24"><path d="M14 4 4 14l3 3 10-10-3-3z"/><path d="M11 7l3 3"/></svg>
+      <h4 data-i18n="tool_paintsprayers">Paint sprayers</h4>
+      <span data-i18n="tool_paintsprayers_stock">5 in stock</span>
+    </div>
+    <div class="tool-card">
+      <svg viewBox="0 0 24 24"><path d="M3 21l6-6M14 4l6 6-9 9-6-6 9-9z"/></svg>
+      <h4 data-i18n="tool_gardenforks">Garden forks</h4>
+      <span data-i18n="tool_gardenforks_stock">9 in stock</span>
+    </div>
+    <div class="tool-card">
+      <svg viewBox="0 0 24 24"><path d="M2 12h6M8 9v6M8 9h7a3 3 0 0 1 0 6H8"/></svg>
+      <h4 data-i18n="tool_wheelbarrows">Wheelbarrows</h4>
+      <span data-i18n="tool_wheelbarrows_stock">3 in stock</span>
+    </div>
+  </div>
+</section>
+
+<section id="stories">
+  <div class="section-head">
+    <span class="eyebrow" data-i18n="stories_eyebrow">From the logbook</span>
+    <h2 data-i18n="stories_title">Neighbours, on borrowing</h2>
+    <p data-i18n="stories_sub">Three entries pulled from the shed's actual sign-out sheet.</p>
+  </div>
+  <div class="testimonials">
+    <div class="testi">
+      <p class="quote" data-i18n="testi1_quote">Borrowed the pressure washer for a Saturday and finally got the moss off the patio. Would've cost more to buy one than to hire someone.</p>
+      <div class="who">Priya N.</div>
+      <div class="role" data-i18n="testi1_role">Member since 2025</div>
+    </div>
+    <div class="testi">
+      <p class="quote" data-i18n="testi2_quote">I've fixed three neighbours' fences with the same borrowed drill. We've started leaving notes for each other in the logbook.</p>
+      <div class="who">Daniel O.</div>
+      <div class="role" data-i18n="testi2_role">Member since 2026</div>
+    </div>
+    <div class="testi">
+      <p class="quote" data-i18n="testi3_quote">As a renter, owning tools never made sense. The shed means I can still hang shelves and fix what breaks.</p>
+      <div class="who">Maya R.</div>
+      <div class="role" data-i18n="testi3_role">Member since 2026</div>
+    </div>
+  </div>
+</section>
+
+<section id="customer-feedback">
+  <div class="section-head">
+    <span class="eyebrow" data-i18n="feedback_eyebrow">Customer Feedback</span>
+    <h2 data-i18n="feedback_title">What our neighbours say</h2>
+    <p data-i18n="feedback_sub">Share your experience and read feedback from our lending shed members.</p>
+  </div>
+
+<!-- Feedback Form -->
+
+<div class="feedback-container">
+  <form id="feedbackForm">
+    <input 
+      type="text"
+      id="name"
+      data-i18n-placeholder="feedback_name_ph"
+      placeholder="Your Name"
+      required>
+
+    <textarea
+      id="message"
+      data-i18n-placeholder="feedback_message_ph"
+      placeholder="Write your feedback..."
+      required></textarea>
+
+    <button class="btn-primary" data-i18n="feedback_submit">Submit Feedback</button>
+
+  </form>
+</div>
+
+<!-- Display Customer Feedback -->
+<div id="feedback-list" class="testimonials"></div>
+</section>
+
+<section id="find-shed">
+  <div class="section-head">
+    <span class="eyebrow" data-i18n="findshed_eyebrow">Find a Shed</span>
+    <h2 data-i18n="findshed_title">Locate a Lending Shed near you</h2>
+    <p data-i18n="findshed_sub">Enter your location and discover the nearest community tool library.</p>
+  </div>
+
+  <div class="shed-search">
+    <input 
+      type="text"
+      id="location"
+      data-i18n-placeholder="findshed_placeholder"
+      placeholder="Enter your location">
+
+    <button class="btn-primary" onclick="findShed()" data-i18n="findshed_button">Search Shed</button>
+  </div>
+  <div id="shed-result"></div>
+  <div id="map"></div>
+</section>
+
+<script 
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1d4NbHqBzBWlNtmVUZekKJvDWuck8kzE&libraries=places">
+</script>
+
+<script src="script.js"></script>
+
+<footer id="join">
+  <div class="footer-grid wrap">
+    <div class="footer-brand">
+      <div class="brand" style="color:var(--cream);"><span class="peg"></span>The Lending Shed</div>
+      <p data-i18n="footer_tagline">A volunteer-run network of tool libraries. Borrow more, own less, build something with the neighbours.</p>
+    </div>
+    <div>
+      <h5 data-i18n="footer_visit">Visit</h5>
+      <ul>
+        <li><a href="#how" data-i18n="nav_how">How it works</a></li>
+        <li><a href="#catalog" data-i18n="nav_catalog">Catalog</a></li>
+        <li><a href="#stories" data-i18n="nav_stories">Stories</a></li>
+        <li><a href="#customer-feedback" data-i18n="nav_feedback">Feedback</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 data-i18n="footer_contact">Contact</h5>
+      <ul>
+        <li><a href="mailto:hello@lendingshed.example">hello@lendingshed.example</a></li>
+        <li><a href="tel:+10000000000">(000) 000-0000</a></li>
+        <li><a href="#">123 Maple Street</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 data-i18n="footer_follow">Follow</h5>
+      <ul>
+        <li><a href="#" data-i18n="footer_instagram">Instagram</a></li>
+        <li><a href="#" data-i18n="footer_facebook">Facebook group</a></li>
+        <li><a href="#" data-i18n="footer_newsletter">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom wrap" style="padding-left:0; padding-right:0;">
+    <span data-i18n="footer_copy">© 2026 The Lending Shed. Run by volunteers, for neighbours.</span>
+    <span data-i18n="footer_builtwith">Built with care, not capital.</span>
+  </div>
+</footer>
+
+</body>
+</html>
