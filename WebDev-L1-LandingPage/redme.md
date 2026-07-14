@@ -3,6 +3,7 @@
 **The Lending Shed** is a neighbourhood tool-lending library concept — a community-run space where neighbours can borrow tools instead of buying and storing their own. This landing page introduces the idea, explains how borrowing works, showcases the tool catalog, and features member stories.
 
 🎯Objective
+
 Build a responsive, multilingual marketing site for a neighbourhood tool-sharing service that:
 - Explains how borrowing works and what's available to borrow
 - Collects and displays visitor feedback
@@ -40,6 +41,6 @@ Build a responsive, multilingual marketing site for a neighbourhood tool-sharing
 - Clean, readable typography with a serif heading font paired with a sans-serif body font
 - Careful use of `box-sizing`, padding, and margin to avoid element overlap at any screen size
 
-Outcome
+**Outcome**
 
 A fully static, framework-free site (`index.html`, `style.css`, `script.js`) that runs by opening `index.html` in a browser. It supports light/dark themes, three languages, a persisted feedback wall, and an interactive map to find the nearest shed.
