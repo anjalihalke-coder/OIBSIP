@@ -28,6 +28,8 @@ Build a modern, animated one-page portfolio that:
 - **CSS3** — custom properties, Grid/Flexbox
 - **Vanilla JavaScript** — no frameworks
 
+🎥 Demo Video: https://anjalihalke-coder.github.io/OIBSIP/WebDev-L1-Portfolio/Portfolio/
+
 <img width="1887" height="867" alt="image" src="https://github.com/user-attachments/assets/33320845-914f-401f-b92a-154d5067401e" />
 
 ✨ Features
