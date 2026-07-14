@@ -21,6 +21,8 @@ Build a small, focused utility that:
 - **CSS3** — custom properties, Grid/Flexbox, gradients
 - **Vanilla JavaScript** — no frameworks; regex validation, DOM manipulation, linear color interpolation for the gauge
 
+🎥 Demo Video: https://anjalihalke-coder.github.io/OIBSIP/WebDev-L1-Tem_ConverterPage/Tem-Converter/
+
 <img width="1822" height="872" alt="image" src="https://github.com/user-attachments/assets/37cab7b5-751c-4403-bb22-d907177d2185" />
 
 ✨Features
