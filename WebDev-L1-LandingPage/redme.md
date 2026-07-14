@@ -23,6 +23,8 @@ Build a responsive, multilingual marketing site for a neighbourhood tool-sharing
 - **Vanilla JavaScript** — no frameworks
 - **Google Maps JavaScript API** — Maps, Markers, Geocoding
 
+🎥 Demo Video:  https://anjalihalke-coder.github.io/OIBSIP/WebDev-L1-LandingPage/The-Lending-Shed/
+
 <img width="1883" height="895" alt="image" src="https://github.com/user-attachments/assets/b1f6e66e-d77d-460c-8a39-e43dbb2f4193" />
 
 ✨ Features
