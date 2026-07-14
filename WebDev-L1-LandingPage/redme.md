@@ -41,6 +41,6 @@ Build a responsive, multilingual marketing site for a neighbourhood tool-sharing
 - Clean, readable typography with a serif heading font paired with a sans-serif body font
 - Careful use of `box-sizing`, padding, and margin to avoid element overlap at any screen size
 
-**Outcome**
+📦**Outcome**
 
 A fully static, framework-free site (`index.html`, `style.css`, `script.js`) that runs by opening `index.html` in a browser. It supports light/dark themes, three languages, a persisted feedback wall, and an interactive map to find the nearest shed.
